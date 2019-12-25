@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport'
+        content='width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no'>
+    <style>
+        body {
+            /* height: 100%; */
+            background-color: black;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .tree {
+            /* display: flex; */
+            width: 20rem;
+            margin: 0 auto;
+            position: absolute;
+            z-index: 10001;
+            bottom: 9rem;
+            left: 2rem;
+        }
+
+        .tree_title {
+            /* display: flex; */
+            position: absolute;
+            bottom: 11rem;
+            left: 8rem;
+            height: 0;
+            width: 0;
+            /* background-color: green; */
+            border-left: 2rem solid transparent;
+            border-right: 2rem solid transparent;
+            border-top: 2rem solid transparent;
+            border-bottom: 2rem solid green;
+            margin: 0 auto;
+        }
+
+        .tree_contre {
+            position: absolute;
+            left: 6rem;
+            height: 0;
+            width: 0;
+            /* background-color: green; */
+            border-left: 4rem solid transparent;
+            border-right: 4rem solid transparent;
+            border-top: 4rem solid transparent;
+            border-bottom: 4rem solid green;
+            margin: 0 auto;
+        }
+
+        .tree_below {
+            height: 0;
+            width: 0;
+            /* background-color: green; */
+            border-left: 6rem solid transparent;
+            border-right: 6rem solid transparent;
+            border-top: 6rem solid transparent;
+            border-bottom: 6rem solid green;
+            margin: 0 auto;
+        }
+
+        .tree_bole {
+            height: 4rem;
+            width: 2rem;
+            background-color: chocolate;
+            margin: 0 auto;
+        }
+
+        .snow-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100001;
+        }
+
+        .snow_field {
+            position: absolute;
+            bottom: 0rem;
+            width: 100%;
+            height: 11rem;
+            background-color: #fff;
+
+        }
+
+        audio {
+            width: 100%;
+        }
+
+        .shadown {
+            position: relative;
+            top: 0rem;
+            left: 5.899rem;
+            height: 4rem;
+            width: 12rem;
+            border-radius: 50%;
+            /* background:#666666; */
+            box-shadow: 0px 5px 7px 7px #666666
+        }
+
+        .buld {
+            position: relative;
+            left: 9rem;
+            top: 3rem;
+            height: 2rem;
+            width: 2rem;
+            background-color: gold;
+            border-radius: 50%;
+            box-shadow: 0px 1px 11px 10px gold;
+            z-index: 100000
+        }
+    </style>
+    <title>圣诞树demo</title>
+</head>
+
+<body>
+    <!-- 雪花 -->
+    <div class="snow-container"></div>
+    <div class="box">
+
+        <!-- 圣诞树 -->
+        <div class="tree">
+            <!-- 灯泡 -->
+            <div class="buld" id="box"></div>
+            <!-- 树 -->
+            <div class="tree_title"></div>
+            <div class="tree_contre"></div>
+            <div class="tree_below"></div>
+            <div class="tree_bole"></div>
+        </div>
+        <!-- 雪地 -->
+        <div class="snow_field">
+            <!-- 阴影 -->
+            <div class="shadown">
+            </div>
+        </div>
+    </div>
+
+    <audio autoplay controls loop src="./刺激战场圣诞大厅BGM.mp3"></audio>
+    <!-- <iframe src="./刺激战场圣诞大厅BGM.mp3" allow="autoplay" ></iframe> -->
+</body>
+<script src="jquery.js"></script>
+<!-- 飘雪等效 -->
+<script src="http://www.lmlblog.com/winter/templets/xq/js/snowy.js"></script>
+<script src="http://www.lmlblog.com/blog/12/js/Snow.js"></script>
+<script>
+    // 灯光颜色
+    var arr = ['gold', '#36dbf1', 'rgb(251, 19, 135)', 'rgb(136, 255, 0)']
+    // 灯光外圈炫光
+    var arr2 = ['0px 1px 11px 10px gold', '0px 1px 11px 10px #36dbf1', '0px 1px 11px 10px rgb(251, 19, 135)', '0px 1px 11px 10px rgb(136, 255, 0)']
+    // 获取灯泡
+    var box = document.getElementById('box')
+
+    // 清除定时器  （不知有没有效）
+    window.clearInterval(timer)
+
+    var timer = setInterval(function () {
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = 0; j < arr2.length; j++) {
+                (function (e) {
+                    setTimeout(function () {
+                        box.style.backgroundColor = arr[e]
+                        box.style.boxShadow = arr2[e]
+                    }, 1500 * e)
+                })(i)
+            }
+
+
+        }
+    }, 3000)
+
+    // setInterval(function () {
+    //     for (var i = 0; i <= arr.length; i++) {
+    //         (function (e) {
+
+
+    //             box.style.backgroundColor = arr[e]
+
+    //         })(i)
+    //     }
+    // }, 1500)
+
+
+</script>
+
+</html>
