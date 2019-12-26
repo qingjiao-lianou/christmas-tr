@@ -39,6 +39,7 @@
             border-right: 2rem solid transparent;
             border-top: 2rem solid transparent;
             border-bottom: 2rem solid green;
+            /* box-shadow: 0px 5px 7px 7px #fff; */
             margin: 0 auto;
         }
 
@@ -118,6 +119,68 @@
             box-shadow: 0px 1px 11px 10px gold;
             z-index: 100000
         }
+        video{
+            width:7rem;
+            /* height: 6rem; */
+        }
+        .snow{
+            height: 0.5rem;
+            width: 0.5rem;
+            background-color: #fff;
+            border-radius: 50%;
+            z-index: 100002
+        }
+        .snow2{
+            position: relative;
+            left: 10rem;
+            top: 10.5rem;
+        }
+        .snow3{
+            position: relative;
+            left: 9.5rem;
+            top: 11rem;
+        }
+        .snow4{
+            position: relative;
+            left: 10.5rem;
+            top: 11rem;
+        }
+        .snow5{
+            position: relative;
+            left: 7.7rem;
+            top: 11.5rem;
+        }
+        .snow1{
+            position: relative;
+            left: 10rem;
+            top: 14rem;
+        }
+        .snow6{
+            position: relative;
+            left: 12rem;
+            top: 15rem;
+        }
+        .snow7{
+            position: relative;
+            left: 10rem;
+            top: 14rem;
+        }
+        .snow8{
+            position: relative;
+            left: 12rem;
+            top: 12.8rem;
+        }
+        .snow9{
+            position: relative;
+            left: 8.5rem;
+            top: 12rem;
+        }
+        .snow10{
+            position: relative;
+            left: 7rem;
+            top: 13rem;
+        }
+       
     </style>
     <title>圣诞树demo</title>
 </head>
@@ -129,6 +192,16 @@
 
         <!-- 圣诞树 -->
         <div class="tree">
+            <div class="snow snow1"></div>
+            <div class="snow snow2"></div>
+            <div class="snow snow3"></div>
+            <div class="snow snow4"></div>
+            <div class="snow snow5"></div>
+            <div class="snow snow6"></div>
+            <div class="snow snow7"></div>
+            <div class="snow snow8"></div>
+            <div class="snow snow9"></div>
+            <div class="snow snow10"></div>
             <!-- 灯泡 -->
             <div class="buld" id="box"></div>
             <!-- 树 -->
@@ -145,8 +218,8 @@
         </div>
     </div>
 
-    <audio autoplay controls loop src="./刺激战场圣诞大厅BGM.mp3"></audio>
-    <!-- <iframe src="./刺激战场圣诞大厅BGM.mp3" allow="autoplay" ></iframe> -->
+    <!-- <audio autoplay controls loop src="./刺激战场圣诞大厅BGM.mp3"></audio> -->
+   <video autoplay controls loop src="./刺激战场圣诞大厅BGM.mp3"></video>
 </body>
 <script src="./jquery.js"></script>
 <!-- 飘雪等效 -->
@@ -154,9 +227,9 @@
 <script src="http://www.lmlblog.com/blog/12/js/Snow.js"></script>
 <script>
     // 灯光颜色
-    var arr = ['gold', '#36dbf1', 'rgb(251, 19, 135)', 'rgb(136, 255, 0)']
+    var arr = [ '#36dbf1', 'rgb(251, 19, 135)', 'rgb(136, 255, 0)','gold']
     // 灯光外圈炫光
-    var arr2 = ['0px 1px 11px 10px gold', '0px 1px 11px 10px #36dbf1', '0px 1px 11px 10px rgb(251, 19, 135)', '0px 1px 11px 10px rgb(136, 255, 0)']
+    var arr2 = [ '0px 1px 11px 10px #36dbf1', '0px 1px 11px 10px rgb(251, 19, 135)', '0px 1px 11px 10px rgb(136, 255, 0)','0px 1px 11px 10px gold']
     // 获取灯泡
     var box = document.getElementById('box')
 
@@ -176,7 +249,7 @@
 
 
         }
-    }, 3000)
+    }, 6000)
 
     // setInterval(function () {
     //     for (var i = 0; i <= arr.length; i++) {
